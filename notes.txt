@@ -1,0 +1,50 @@
+curl https://think.cs.vt.edu/corgis/datasets/json/airlines/airlines.json
+
+https://think.cs.vt.edu/corgis/datasets/json/airlines/airlines.json
+
+- ability to select year
+  - dropdown?
+- % of flight delays
+  - caused by  national aviation failures
+    - for calender year 2005
+
+----- DB DESIGN -----
+
+
+Example problem:
+
+TEACHER_DIMS
+teacher_id primary key,
+teacher_name VARCHAR
+
+STUDENT_DIMS
+???
+
+PARENT_DIMS
+
+CLASSROOM_DIMENSION
+classroom_id INTEGER primary key
+teacher_id INTEGER 
+grade INTEGER
+
+ASSIGNMENT_DIMENSION
+
+assignemnt_id INTEGER primary key, 
+classroom_id INTEGER foreign key, 
+name VARCHAR, 
+
+STUDENT_GRADES
+
+student_id INTEGER primary key not null,  
+assignment_id INTEGER foreign key not null, 
+score_percentage DECIMAL
+
+- goal:
+  - load GPA and how they are doing in class
+  
+- application for local highschool:
+  - track all students
+    - in all grades
+      - all classes
+        - all assignments
+          - scores
